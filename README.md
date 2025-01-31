@@ -10,14 +10,15 @@ This project provides a lightweight Dependency Injection (DI) system for Unity, 
 - Resolves dependencies via constructor injection.
 
 ## Installation
-1. Add the `DI` namespace to your project.
-2. Ensure that your scripts extend the `Context` class and override `RegisterDependencies()`.
+1. Import .unitypackage file in your project.
+2. Add the `DI` namespace to your project.
+3. Ensure that your scripts extend the `SceneContext` or `ProjectContext` class and override `RegisterDependencies()`.
 
 ## Usage
 
 ### Registering Dependencies
 ```csharp
-public class GameContext : Context
+public class MyContext : SceneContext
 {
     public override void RegisterDependencies()
     {
