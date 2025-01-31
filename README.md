@@ -31,7 +31,12 @@ public class MyContext : SceneContext
 ```
 
 ### Resolving Dependencies
-Dependencies can be resolved using the `DiContainer.Instance.Resolve<T>()` method.
+Dependencies can be resolved using the `[Inject]` tag. You can use it with properties, fields or methods. You also can expect them in your class constructor.
+```csharp
+[Inject] private PlayerController _playerController;
+```
+
+Or they can be resolved using the `DiContainer.Instance.Resolve<T>()` method.
 ```csharp
 var player = DiContainer.Instance.Resolve<IPlayer>();
 ```
