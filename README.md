@@ -48,7 +48,7 @@ Registers a dependency by interface-to-implementation mapping.
 - `isSingleton`: If `true`, a single instance is maintained; otherwise, a new instance is created on each resolve.
 
 ### `Register<TService>(bool isSingleton)`
-Registers a dependency by its type without specifying an implementation.
+Registers a dependency by its type with only specifying an implementation.
 
 ### `RegisterFromInstance<TService>(TService instance)`
 Registers an existing instance as a singleton dependency.
