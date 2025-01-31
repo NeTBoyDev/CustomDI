@@ -68,6 +68,31 @@ Registers a `MonoBehaviour` dependency from a prefab.
 ### `RegisterWithParameters<TService, TImplementation>(bool isSingleton, params object[] parameters)`
 Registers a dependency and allows passing constructor parameters.
 
+## Tags
+
+### Adding tag
+
+If you want to add a tag to your dependency registration, you need to use .WithTag("Tag") method after any registration method
+```csharp
+public class MyContext : SceneContext
+{
+    public override void RegisterDependencies()
+    {
+        Register<IPlayer, Player>(isSingleton: true).WithTag("MainPlayer");
+    }
+}
+```
+
+### Resolving dependency with tag
+
+If you want to resolve dependency with a certain tag, you can pass the string parameter in `[Inject("Tag")]` 
+```csharp
+public class MyClass : MonoBehaviour
+{
+    [Inject("MainPlayer")] private IPlayer _player;
+}
+```
+
 ## Error Handling
 - If a dependency cannot be found in the scene, an exception is thrown.
 - If no suitable constructor is found during resolution, an exception is thrown.
