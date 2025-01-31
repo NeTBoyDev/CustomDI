@@ -1,4 +1,4 @@
-# Dependency Injection Context for Unity
+# Dependency Injection Framework for Unity
 
 ## Overview
 This project provides a lightweight Dependency Injection (DI) system for Unity, allowing flexible and structured management of dependencies within your game or application.
